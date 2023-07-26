@@ -1,5 +1,12 @@
 # ctf
 
+#### API Hacking
+
+- https://www.postman.com/
+- https://portswigger.net/burp
+- https://github.com/assetnote/kiterunner
+- 
+
 #### Vulnerability Research
 
 - https://www.exploit-db.com/
