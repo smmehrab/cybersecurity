@@ -5,6 +5,15 @@
 - https://www.postman.com/
 - https://portswigger.net/burp
 - https://github.com/assetnote/kiterunner
+- https://github.com/xmendez/wfuzz
+- https://github.com/owasp-amass/amass
+- 
+
+#### OSINT
+
+- https://github.com/sherlock-project/sherlock
+- https://github.com/vysecurity/LinkedInt
+- https://github.com/gophish/gophish
 - 
 
 #### Vulnerability Research
@@ -17,4 +26,10 @@
 #### Malware Research
 
 - https://github.com/PatrikH0lop/malware_showcase
+- 
+
+#### Tools
+
+- USB Rubber Ducky Using Rasberry Pi Pico
+  https://github.com/dbisu/pico-ducky
 -
