@@ -28,8 +28,9 @@
 - https://github.com/PatrikH0lop/malware_showcase
 - 
 
-#### Tools
+#### Hardware Tools
 
 - USB Rubber Ducky Using Rasberry Pi Pico
   https://github.com/dbisu/pico-ducky
--
+- FemtoCell
+- Stingray
