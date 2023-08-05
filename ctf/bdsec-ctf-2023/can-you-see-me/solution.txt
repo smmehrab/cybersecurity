@@ -1,0 +1,9 @@
+# Init Pseudo Shell
+python3 exploit.py
+Input: http://139.144.184.115:8989/
+
+# Pseudo Shell Commands
+
+ls -lah /
+ls -lah /root
+cat /root/flag.txt
