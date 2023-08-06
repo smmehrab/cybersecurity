@@ -1,0 +1,60 @@
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+echo 'PS1="[\[\e[1m\]\u:\w\[\e[0m\]]\$ "' >> ~/.bashrc
+sudo apt install gnome-tweaks
+sudo snap install discord
+sudo snap install --classic code
+sudo apt install unrar
+sudo apt install git
+sudo apt install curl
+sudo apt install python3-pip
+sudo apt install wireshark
+sudo apt install tshark
+sudo apt install proxychains
+sudo apt install traceroute
+sudo apt install whois
+sudo apt install nmap
+sudo apt install nikto
+sudo apt install hashcat
+
+# john
+git clone https://github.com/openwall/john
+sudo apt install libssl-dev
+cd john/src
+./configure && make
+echo 'export PATH="$PATH:$HOME/john/run"' >> ~/.bashrc
+echo "alias john='~/john/run/john'" >> ~/.bashrc
+source ~/.bashrc
+
+sudo apt install dirb
+sudo apt install gobuster
+sudo apt install ffuf
+sudo apt install dnsrecon
+sudo snap install seclists
+sudo apt install libimage-exiftool-perl
+sudo apt install -y recon-ng
+
+# Java (Oracle)
+sudo wget https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.deb
+sudo apt install -y libc6-x32
+sudo dpkg -i jdk-20_linux-x64_bin.deb
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-20/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-20/bin/javac 1
+echo 'JAVA_HOME="/usr/lib/jvm/jdk-20/"' | sudo tee -a /etc/environment
+source /etc/environment
+echo $JAVA_HOME
+
+# Maltego
+sudo wget https://downloads.maltego.com/maltego-v4/linux/Maltego.v4.5.0.deb
+sudo dpkg -i Maltego.v4.5.0.deb
+
+sudo apt install qbittorrent
+sudo snap install vlc
+sudo snap install spotify
+sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
+
+pip install pipenv
+export PATH="/home/smmehrab/.local/bin:$PATH"
+
+
