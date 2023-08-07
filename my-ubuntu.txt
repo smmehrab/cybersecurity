@@ -2,6 +2,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 echo 'PS1="[\[\e[1m\]\u:\w\[\e[0m\]]\$ "' >> ~/.bashrc
 sudo apt install gnome-tweaks
+sudo apt install net-tools
 sudo snap install discord
 sudo snap install --classic code
 sudo apt install unrar
@@ -16,6 +17,9 @@ sudo apt install whois
 sudo apt install nmap
 sudo apt install nikto
 sudo apt install hashcat
+sudo apt install perl
+sudo apt install smbclient
+sudo snap install enum4linux
 
 # john
 git clone https://github.com/openwall/john

@@ -28,6 +28,7 @@
 
 * [https://www.abuseipdb.com/](https://www.abuseipdb.com/)
 * Network
+  * [tcpdump](https://www.tcpdump.org/)
   * [wireshark](https://www.wireshark.org/)
   * [snort](https://www.snort.org/)
   * [zeek](https://zeek.org/)
@@ -48,6 +49,13 @@
 - [gobuster](https://www.kali.org/tools/gobuster/)
 - [nikto](https://www.kali.org/tools/nikto/)
 - [nessus](https://www.tenable.com/products/nessus?utm_campaign=gs-{11596512479}-{110256808302}-{537515898656}_00026644_fy23&utm_promoter=tenable-hv-brand-00026644&utm_source=google&utm_term=nessus&utm_medium=cpc&utm_geo=apac&gclid=CjwKCAjw5remBhBiEiwAxL2M94jwwfvyR4FWvmcRZhAz1xxjoaZSZlPskF3mbHCn9c7zI-DdcrOLbBoCn0IQAvD_BwE)
+
+#### Network Services
+
+* [nmap](https://nmap.org/)
+* [enum4linux](https://www.kali.org/tools/enum4linux/)
+* [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)
+* 
 
 #### OSINT
 
@@ -77,13 +85,15 @@
   - [exiftool](https://exiftool.org/)
 - [recon-ng](https://www.kali.org/tools/recon-ng/)
 - [maltego](https://www.kali.org/tools/maltego/)
+- 
 
 #### Vulnerability Research
 
-- https://www.exploit-db.com/
-- https://www.exploit-db.com/searchsploit
-- https://nvd.nist.gov/vuln/search
-- https://cve.mitre.org/
+- [https://www.exploit-db.com/](https://www.exploit-db.com/)
+- [https://www.exploit-db.com/searchsploit](https://www.exploit-db.com/searchsploit)
+- [https://nvd.nist.gov/vuln/search](https://nvd.nist.gov/vuln/search)
+- [https://cve.mitre.org/](https://cve.mitre.org/)
+- [https://www.cvedetails.com/](https://www.cvedetails.com/)
 
 #### Malware Research
 
