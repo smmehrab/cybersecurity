@@ -20,6 +20,7 @@ sudo apt install hashcat
 sudo apt install perl
 sudo apt install smbclient
 sudo snap install enum4linux
+sudo apt install dsniff
 
 # john
 git clone https://github.com/openwall/john
@@ -52,6 +53,7 @@ echo $JAVA_HOME
 sudo wget https://downloads.maltego.com/maltego-v4/linux/Maltego.v4.5.0.deb
 sudo dpkg -i Maltego.v4.5.0.deb
 
+sudo snap install remmina
 sudo apt install qbittorrent
 sudo snap install vlc
 sudo snap install spotify
