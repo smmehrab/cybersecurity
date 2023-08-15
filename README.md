@@ -15,8 +15,10 @@
     source ~/.bashrc
     ```
 - [ssh2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py)
+- [thc-hydra](https://github.com/vanhauser-thc/thc-hydra)
+  - ``hydra -l username -P wordlist.txt server service``
+  - ``hydra -l username -P wordlist.txt service://[MACHINE_IP]:service_port``
 - [gpg](https://gnupg.org/)
-- 
 
 #### Online Tools
 
@@ -102,7 +104,15 @@
   * [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)
   * [NetworkMiner](https://www.netresec.com/?page=NetworkMiner)
   * RSA Netwitness
+* MITM
+  * [Ettercap](https://www.ettercap-project.org/)
+  * [Bettercap](https://www.bettercap.org/)
 * 
+
+#### Priviledge Escalation
+
+* [PEASS-ng](https://github.com/carlospolop/PEASS-ng)
+* [GTFOBins](https://gtfobins.github.io/)
 
 #### OSINT
 
@@ -159,4 +169,5 @@
 
 - [RockYou](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
 - [SecLists](https://github.com/danielmiessler/SecLists)
+  - [directory-list-1.0.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/directory-list-1.0.txt)
 - [jwt-secrets](https://github.com/wallarm/jwt-secrets)

@@ -39,6 +39,9 @@ sudo snap install seclists
 sudo apt install libimage-exiftool-perl
 sudo apt install -y recon-ng
 
+# Metasploit
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+
 # Java (Oracle)
 sudo wget https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.deb
 sudo apt install -y libc6-x32
