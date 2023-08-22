@@ -24,7 +24,7 @@ sudo apt install dsniff
 sudo apt install default-mysql-client
 sudo apt install python3-scapy
 pip3 install keyboard
-
+sudo apt install socat
 sudo apt install dirb
 sudo apt install gobuster
 sudo apt install ffuf
