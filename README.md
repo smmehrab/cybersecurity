@@ -14,17 +14,32 @@
     echo "alias john='~/john/run/john'" >> ~/.bashrc
     source ~/.bashrc
     ```
-- [ssh2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py)
-- [thc-hydra](https://github.com/vanhauser-thc/thc-hydra)
+  - [ssh2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py)
+- [hydra](https://github.com/vanhauser-thc/thc-hydra)
   - ``hydra -l username -P wordlist.txt server service``
   - ``hydra -l username -P wordlist.txt service://[MACHINE_IP]:service_port``
+  - POST Web Form
+    ``sudo hydra `<username>` `<wordlist>` MACHINE_IP http-post-form "`<path>`:<login_credentials>:<invalid_response>"``
+  - SSH
+    ``hydra -l `<username>` -P `<full path to pass>` MACHINE_IP -t 4 ssh``
 - [gpg](https://gnupg.org/)
+- Python Tools
+  * python to exe
+    * [PyInstaller](http://www.pyinstaller.org/)
+    * [py2exe](https://pypi.python.org/pypi/py2exe/0.9.2.0)
+  * [Scapy](https://scapy.net/)
+    ``sudo apt install python3-scapy``
+  * [keyboard](https://pypi.org/project/keyboard/)
+    ``pip3 install keyboard``
+  * [hashlib](https://docs.python.org/3/library/hashlib.html)
+  * [Paramiko](https://www.paramiko.org/index.html)
+    ``pip install paramiko``
+- 
 
 #### Online Tools
 
 - [hashes.com](https://hashes.com/en/decrypt/hash)
 - [crackstation.net](https://crackstation.net/)
-- 
 
 #### Defensive Security
 
@@ -49,12 +64,23 @@
 - [ffuf](https://github.com/ffuf/ffuf)
 - [dirb](https://www.kali.org/tools/dirb/)
 - [gobuster](https://www.kali.org/tools/gobuster/)
+  - Directory Enumeration
+    ``gobuster -u MACHINE_IP -w /snap/seclists/current/Discovery/Web-Content/directory-list-1.0.txt``
 - [nikto](https://www.kali.org/tools/nikto/)
 - [nessus](https://www.tenable.com/products/nessus?utm_campaign=gs-{11596512479}-{110256808302}-{537515898656}_00026644_fy23&utm_promoter=tenable-hv-brand-00026644&utm_source=google&utm_term=nessus&utm_medium=cpc&utm_geo=apac&gclid=CjwKCAjw5remBhBiEiwAxL2M94jwwfvyR4FWvmcRZhAz1xxjoaZSZlPskF3mbHCn9c7zI-DdcrOLbBoCn0IQAvD_BwE)
+- Inspect Webhook and HTTP Requests
+  - [requestbin.com](requestbin.com)
+- [Beef](https://beefproject.com/)
+- Blind XSS
+  - [XSS Hunter Express](https://github.com/mandatoryprogrammer/xsshunter-express)
+- 
 
 #### Network Services
 
 * [nmap](https://nmap.org/)
+  * Common
+    * ``nmap -A -sC -sV -p- -T4 --min-rate=9326 -vv MACHINE_IP``
+    * ``nmap -Pn -sV MACHINE_IP``
   * Options
     * no DNS lookup ``-n``
     * reverse-DNS lookup ``-R``
@@ -97,6 +123,7 @@
   * Decoy Scan ``nmap -D DECOY_IP,ME MACHINE_IP``
   * Idle (Zombie) Scan ``sudo nmap -sI ZOMBIE_IP MACHINE_IP``
 * [enum4linux](https://www.kali.org/tools/enum4linux/)
+  * ``enum4linux -a MACHINE_IP``
 * [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)
 * [dsniff](https://www.kali.org/tools/dsniff/)
 * Traffic Analysis
@@ -107,6 +134,34 @@
 * MITM
   * [Ettercap](https://www.ettercap-project.org/)
   * [Bettercap](https://www.bettercap.org/)
+* Wifi
+  * [aircrack-ng](https://www.aircrack-ng.org/)
+    * Check for Wifi adapter interface
+      ``iwconfig``
+    * Run Wifi adapter on `Monitor` mode
+      ``sudo airmon-ng start interface_name``
+    * Check and kill any interfering process
+      ``sudo airmon-ng check kill``
+    * Capture traffic from nearby Wifi
+      ``sudo airodump-ng interface_name``
+    * Capture traffic from target Wifi
+      ``sudo airodump-ng --bssid target_bssid -c target_channel --write target_traffic interface_name``
+    * Deauthentication attack
+      ``sudo aireplay-ng --deauth packet_count -a target_bssid interface_name``
+      * In case of similar issue (``wlan0mon is on channel 2, but the AP uses channel 5 ``)
+        ``sudo airmon-ng start interface_name target_channel``
+    * Cracking the password
+      ``sudo aircrack-ng -b target_bssid captured_traffic.cap -w wordlist``
+    * Convert to hashcat file (`-j` or `-J`)
+      ``sudo aircrack-ng -j output.hccapx -b target_bssid file.cap``
+  * [wifite](https://www.kali.org/tools/wifite/)
+* [smtp-user-enum](https://www.kali.org/tools/smtp-user-enum/#smtp-user-enum)
+* [metasploit](https://www.metasploit.com/)
+  * smtp_enum
+  * smtp_version
+  * mysql_sql
+  * mysql_schemadump
+  * mysql_hashdump
 * 
 
 #### Priviledge Escalation
@@ -155,7 +210,10 @@
 
 #### Malware Research
 
-- https://github.com/PatrikH0lop/malware_showcase
+- [https://github.com/PatrikH0lop/malware_showcase](https://github.com/PatrikH0lop/malware_showcase)
+- [Yara Rules](https://yara.readthedocs.io/en/stable/writingrules.html)
+- Static Malware Analysis
+  - [PEStudio](https://www.winitor.com/download)
 - 
 
 #### Hardware Tools

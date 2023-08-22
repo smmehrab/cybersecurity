@@ -21,6 +21,26 @@ sudo apt install perl
 sudo apt install smbclient
 sudo snap install enum4linux
 sudo apt install dsniff
+sudo apt install default-mysql-client
+sudo apt install python3-scapy
+pip3 install keyboard
+
+sudo apt install dirb
+sudo apt install gobuster
+sudo apt install ffuf
+sudo apt install dnsrecon
+sudo snap install seclists
+sudo apt install libimage-exiftool-perl
+sudo apt install -y recon-ng
+sudo apt install aircrack-ng
+sudo apt install wifite
+
+# hydra
+sudo apt install libssh-dev
+git clone https://github.com/vanhauser-thc/thc-hydra.git
+cd thc-hydra
+./configure && make
+sudo make install
 
 # john
 git clone https://github.com/openwall/john
@@ -31,16 +51,21 @@ echo 'export PATH="$PATH:$HOME/john/run"' >> ~/.bashrc
 echo "alias john='~/john/run/john'" >> ~/.bashrc
 source ~/.bashrc
 
-sudo apt install dirb
-sudo apt install gobuster
-sudo apt install ffuf
-sudo apt install dnsrecon
-sudo snap install seclists
-sudo apt install libimage-exiftool-perl
-sudo apt install -y recon-ng
+# beef
+sudo apt install ruby ruby-dev
+git clone https://github.com/beefproject/beef
+cd beef
+sudo ./install
+sudo nano config.yaml
 
 # Metasploit
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+
+# NFS Server
+sudo apt install nfs-kernel-server
+
+# NFS Client
+sudo apt install nfs-common
 
 # Java (Oracle)
 sudo wget https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.deb
