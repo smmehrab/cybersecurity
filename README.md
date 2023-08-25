@@ -2,27 +2,35 @@
 
 #### CLI Tools
 
-- [hashcat](https://hashcat.net/hashcat/)
-- [john](https://github.com/openwall/john)
-  - ```bash
-    cd ~
-    git clone https://github.com/openwall/john
-    sudo apt install libssl-dev
-    cd john/src
-    ./configure && make
-    echo 'export PATH="PATH:PATH:HOME/john/run"' >> ~/.bashrc
-    echo "alias john='~/john/run/john'" >> ~/.bashrc
-    source ~/.bashrc
-    ```
-  - [ssh2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py)
-- [hydra](https://github.com/vanhauser-thc/thc-hydra)
-  - ``hydra -l username -P wordlist.txt server service``
-  - ``hydra -l username -P wordlist.txt service://[MACHINE_IP]:service_port``
-  - POST Web Form
-    ``sudo hydra `<username>` `<wordlist>` MACHINE_IP http-post-form "`<path>`:<login_credentials>:<invalid_response>"``
-  - SSH
-    ``hydra -l `<username>` -P `<full path to pass>` MACHINE_IP -t 4 ssh``
-- [gpg](https://gnupg.org/)
+- Bruteforce
+  - [hashcat](https://hashcat.net/hashcat/)
+  - [john](https://github.com/openwall/john)
+    - ```bash
+      cd ~
+      git clone https://github.com/openwall/john
+      sudo apt install libssl-dev
+      cd john/src
+      ./configure && make
+      echo 'export PATH="PATH:PATH:HOME/john/run"' >> ~/.bashrc
+      echo "alias john='~/john/run/john'" >> ~/.bashrc
+      source ~/.bashrc
+      ```
+    - [ssh2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py)
+  - [hydra](https://github.com/vanhauser-thc/thc-hydra)
+    - ``hydra -l username -P wordlist.txt server service``
+    - ``hydra -l username -P wordlist.txt service://[MACHINE_IP]:service_port``
+    - POST Web Form
+      ``sudo hydra `<username>` `<wordlist>` MACHINE_IP http-post-form "`<path>`:<login_credentials>:<invalid_response>"``
+    - SSH
+      ``hydra -l `<username>` -P `<full path to pass>` MACHINE_IP -t 4 ssh``
+- Encryption/Decryption
+  - [gpg](https://gnupg.org/) (GNU Privacy Guard)
+    - Encrypt: ``gpg --symmetric --cipher-algo CIPHER message.txt``
+    - Decrypt: ``gpg --output original_message.txt --decrypt message.gpg``
+    - ASCII Armoured Output: ``gpg --armor --symmetric --cipher-algo CIPHER message.txt``
+  - [openssl](https://www.openssl.org/)
+    - CSR
+      ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``
 - Python Tools
   * python to exe
     * [PyInstaller](http://www.pyinstaller.org/)
@@ -48,6 +56,7 @@
   * [tcpdump](https://www.tcpdump.org/)
   * [wireshark](https://www.wireshark.org/)
   * [snort](https://www.snort.org/)
+    * [snorpy](http://snorpy.cyb3rs3c.net/)
   * [zeek](https://zeek.org/)
   * [network-miner](https://www.netresec.com/?page=NetworkMiner)
   * [brim](https://www.brimdata.io/)
@@ -55,12 +64,14 @@
 
 #### Web Hacking
 
-- https://www.postman.com/
-- https://portswigger.net/burp
-- https://github.com/assetnote/kiterunner
-- https://github.com/xmendez/wfuzz
-- https://github.com/owasp-amass/amass
-- [OWASP Favicon Databse](https://wiki.owasp.org/index.php/OWASP_favicon_database)
+- [OWASP](https://owasp.org/)
+  - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+  - [OWASP Favicon Databse](https://wiki.owasp.org/index.php/OWASP_favicon_database)
+- [Postman](https://www.postman.com/)
+- [Burp Suite](https://portswigger.net/burp)
+- [https://github.com/assetnote/kiterunner](https://github.com/assetnote/kiterunner)
+- [https://github.com/xmendez/wfuzz](https://github.com/xmendez/wfuzz)
+- [https://github.com/owasp-amass/amass](https://github.com/owasp-amass/amass)
 - [ffuf](https://github.com/ffuf/ffuf)
 - [dirb](https://www.kali.org/tools/dirb/)
 - [gobuster](https://www.kali.org/tools/gobuster/)
