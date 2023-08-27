@@ -100,16 +100,34 @@
     - Boolean-based
     - Time-based
   - Out-of-Band
+- Subresource Integrity (SRI)
+  - Generate Hash: [https://www.srihash.org/](https://www.srihash.org/)
+  - ``<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>``
 - 
 
 #### Network Services
 
-* [netcat](https://en.wikipedia.org/wiki/Netcat)
+* [netcat
+  ](https://en.wikipedia.org/wiki/Netcat)
+* [rlwrap](https://github.com/hanslub42/rlwrap)
+
+  * ``rlwrap nc -lvnp port``
+  * ``CTRL + Z``
+  * ``stty raw -echo; fg``
 * [socat](https://www.kali.org/tools/socat/)
+
+  * [socat static compiled binary](https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true)
+  * Change Terminal Size
+    * ``stty -a``
+    * ``stty rows number``
+    * ``stty cols number``
+  * 
 * [nmap](https://nmap.org/)
+
   * Common
     * ``nmap -A -sC -sV -p- -T4 --min-rate=9326 -vv MACHINE_IP``
     * ``nmap -Pn -sV MACHINE_IP``
+    * ``nmap MACHINE_IP -p port1,port2,port3 -script vuln``
   * Options
     * no DNS lookup ``-n``
     * reverse-DNS lookup ``-R``
@@ -152,18 +170,22 @@
   * Decoy Scan ``nmap -D DECOY_IP,ME MACHINE_IP``
   * Idle (Zombie) Scan ``sudo nmap -sI ZOMBIE_IP MACHINE_IP``
 * [enum4linux](https://www.kali.org/tools/enum4linux/)
+
   * ``enum4linux -a MACHINE_IP``
 * [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)
 * [dsniff](https://www.kali.org/tools/dsniff/)
 * Traffic Analysis
+
   * [wireshark](https://www.wireshark.org/)
   * [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)
   * [NetworkMiner](https://www.netresec.com/?page=NetworkMiner)
   * RSA Netwitness
 * MITM
+
   * [Ettercap](https://www.ettercap-project.org/)
   * [Bettercap](https://www.bettercap.org/)
 * Wifi
+
   * [aircrack-ng](https://www.aircrack-ng.org/)
     * Check for Wifi adapter interface
       ``iwconfig``
@@ -186,13 +208,35 @@
   * [wifite](https://www.kali.org/tools/wifite/)
 * [smtp-user-enum](https://www.kali.org/tools/smtp-user-enum/#smtp-user-enum)
 * [metasploit](https://www.metasploit.com/)
-  * smtp_enum
-  * smtp_version
-  * mysql_sql
-  * mysql_schemadump
-  * mysql_hashdump
+
+  * Database
+    * ``systemctl start postgresql``
+    * ``msfdb init``
+    * db_status
+    * workspace
+    * help
+    * db_nmap
+    * hosts
+    * services
+  * SMTP
+    * smtp_enum
+    * smtp_version
+  * MySQL
+    * mysql_sql
+    * mysql_schemadump
+    * mysql_hashdump
   * multi/handler
   * msfvenom
+  * portscan
+  * SMB
+    * smb_enumshares
+    * smb_version
+    * smb_login
+  * enum_shares
+  * meterpreter
+  * hashdump
+  * kiwi
+* [searchsploit](https://www.exploit-db.com/searchsploit)
 * [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 * 
 
@@ -224,12 +268,12 @@
   - [threat-intelligence-platform](https://threatintelligenceplatform.com/)
   - [censys](https://search.censys.io/)
   - [shodan](https://www.shodan.io/)
+  - [https://wigle.net/](https://wigle.net/)
 - File Related
   - [pdfinfo](https://linux.die.net/man/1/pdfinfo)
   - [exiftool](https://exiftool.org/)
 - [recon-ng](https://www.kali.org/tools/recon-ng/)
 - [maltego](https://www.kali.org/tools/maltego/)
-- 
 
 #### Vulnerability Research
 
