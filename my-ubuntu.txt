@@ -36,6 +36,8 @@ sudo apt install aircrack-ng
 sudo apt install wifite
 sudo snap install searchsploit
 sudo apt install rlwrap
+sudo apt install ntpdate
+sudo apt install rsyslog
 
 # hydra
 sudo apt install libssh-dev
