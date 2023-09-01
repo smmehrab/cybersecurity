@@ -324,6 +324,11 @@
 - Static Malware Analysis
 
   - [PEStudio](https://www.winitor.com/download)
+  - [radare2](https://rada.re/n/)
+  - [Binary Ninja](https://binary.ninja/)
+  - [IDA Pro](https://hex-rays.com/ida-pro/)
+  - [ghidra](https://ghidra-sre.org/)
+  - [Cutter](https://cutter.re/)
 - AV
 
   - [SharpEDRChecker](https://github.com/PwnDexter/SharpEDRChecker)

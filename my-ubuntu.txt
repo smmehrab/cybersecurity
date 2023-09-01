@@ -38,6 +38,7 @@ sudo snap install searchsploit
 sudo apt install rlwrap
 sudo apt install ntpdate
 sudo apt install rsyslog
+sudo snap install ghidra
 
 # hydra
 sudo apt install libssh-dev
