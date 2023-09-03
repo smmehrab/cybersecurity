@@ -48,6 +48,7 @@
 
 - [hashes.com](https://hashes.com/en/decrypt/hash)
 - [crackstation.net](https://crackstation.net/)
+- [cyberchef](https://gchq.github.io/CyberChef/)
 
 #### Defensive Security
 
@@ -69,6 +70,7 @@
   - [OWASP Favicon Databse](https://wiki.owasp.org/index.php/OWASP_favicon_database)
 - [Postman](https://www.postman.com/)
 - [Burp Suite](https://portswigger.net/burp)
+  - [FoxyProxy Standard](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp)
 - [https://github.com/assetnote/kiterunner](https://github.com/assetnote/kiterunner)
 - [https://github.com/xmendez/wfuzz](https://github.com/xmendez/wfuzz)
 - [https://github.com/owasp-amass/amass](https://github.com/owasp-amass/amass)
@@ -319,6 +321,8 @@
 
 #### Malware Research
 
+- [malapi.io](https://malapi.io/)
+- [Windows API](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa)
 - [https://github.com/PatrikH0lop/malware_showcase](https://github.com/PatrikH0lop/malware_showcase)
 - [Yara Rules](https://yara.readthedocs.io/en/stable/writingrules.html)
 - Static Malware Analysis
@@ -329,7 +333,7 @@
   - [IDA Pro](https://hex-rays.com/ida-pro/)
   - [ghidra](https://ghidra-sre.org/)
   - [Cutter](https://cutter.re/)
-- AV
+- Antivirus (AV)
 
   - [SharpEDRChecker](https://github.com/PwnDexter/SharpEDRChecker)
   - Open Source
