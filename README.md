@@ -63,6 +63,14 @@
   * [zeek](https://zeek.org/)
   * [network-miner](https://www.netresec.com/?page=NetworkMiner)
   * [brim](https://www.brimdata.io/)
+* [Pyramid of Pain
+  ](https://www.attackiq.com/glossary/pyramid-of-pain/)Demonstrates that some indicators of a compromise are more troubling to adversaries than others.
+* Blogs
+  * [https://thedfirreport.com/](https://thedfirreport.com/)
+  * [https://www.trellix.com/en-us/about/newsroom/stories/research.html](https://www.trellix.com/en-us/about/newsroom/stories/research.html)
+* Hash Lookups
+  * [virustotal](https://www.virustotal.com/gui/home/upload)
+  * [metadefender-opswat](https://metadefender.opswat.com/)
 * 
 
 #### Web Hacking
@@ -388,6 +396,49 @@
     * Copy it to the mounted directory
     * Execute it from target machine (shell)
 * Windows
+  * `type flag.txt`
+  * `schtasks`
+    * `schtasks /query /tn task_name /fo list /v`
+    * `schtasks /run /tn task_name`
+  * `icacls`
+    To check file permission of an executable
+    * `icacls file_path`
+    * `icacls service_name /grant Everyone:F`
+  * `sc qc`
+    * `BINARY_PATH_NAME`
+      Associated Executable
+    * `SERVICE_START_NAME`
+      Account used to run the executable
+    * `sc server_name qc service_name`
+    * `sc qc service_name`
+    * `sc start service_name`
+    * `sc stop service_name`
+  * Discretionary Access Control List (DACL)
+  * Process Hacker
+  * All of the services configurations are stored on the registry under
+    `HKLM\SYSTEM\CurrentControlSet\Services\`
+  * Permissions
+    * `F` (Full Access)
+    * `M` (Modify)
+    * `RX` (Read-Execute)
+    * `I` (Inherit)
+  * Insecure Permissions on Service Executables
+    * `M` access permission to the executable
+  * Unquoted Service Paths
+    * `BINARY_PATH_NAME   : C:\MyPrograms\Disk Sorter Enterprise\bin\disksrs.exe`
+      * `C:\MyPrograms\Disk.exe`
+      * `C:\MyPrograms\Disk Sorter.exe`
+      * `C:\MyPrograms\Disk Sorter Enterprise\bin\disksrs.exe`
+    * But we have to have permission to the parent directory
+  * Insecure Service Permissions
+    * If the service DACL (not the service's executable DACL) allow us to modify the configuration of a service, we will be able to reconfigure the service.
+    * To check for a service DACL from the command line, [Accesschk](https://learn.microsoft.com/en-us/sysinternals/downloads/accesschk)
+
+      * `accesschk64.exe -qlc service_name`
+      * `SERVICE_ALL_ACCESS`
+        Can reconfigure the service
+  * 
+  * 
 
 #### OSINT
 
