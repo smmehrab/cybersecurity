@@ -76,6 +76,7 @@ sudo apt install nfs-common
 # Java (Oracle)
 sudo wget https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.deb
 sudo apt install -y libc6-x32
+sudo apt install libc6-i386
 sudo dpkg -i jdk-20_linux-x64_bin.deb
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-20/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-20/bin/javac 1
