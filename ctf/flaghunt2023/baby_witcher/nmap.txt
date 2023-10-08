@@ -1,0 +1,166 @@
+[smmehrab:~]$ nmap -A -sC -sV -p- -T4 --min-rate=9326 -vv 45.76.177.238
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-10-07 10:24 +06
+NSE: Loaded 151 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 10:24
+Completed NSE at 10:24, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 10:24
+Completed NSE at 10:24, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 10:24
+Completed NSE at 10:24, 0.00s elapsed
+Initiating Ping Scan at 10:24
+Scanning 45.76.177.238 [2 ports]
+Completed Ping Scan at 10:24, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 10:24
+Completed Parallel DNS resolution of 1 host. at 10:24, 0.28s elapsed
+Initiating Connect Scan at 10:24
+Scanning 45.76.177.238.vultrusercontent.com (45.76.177.238) [65535 ports]
+Discovered open port 80/tcp on 45.76.177.238
+Discovered open port 22/tcp on 45.76.177.238
+Discovered open port 9331/tcp on 45.76.177.238
+Increasing send delay for 45.76.177.238 from 0 to 5 due to max_successful_tryno increase to 5
+Increasing send delay for 45.76.177.238 from 5 to 10 due to max_successful_tryno increase to 6
+Warning: 45.76.177.238 giving up on port because retransmission cap hit (6).
+Discovered open port 1569/tcp on 45.76.177.238
+Completed Connect Scan at 10:24, 46.20s elapsed (65535 total ports)
+Initiating Service scan at 10:24
+Scanning 4 services on 45.76.177.238.vultrusercontent.com (45.76.177.238)
+Completed Service scan at 10:26, 89.36s elapsed (4 services on 1 host)
+NSE: Script scanning 45.76.177.238.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 10:26
+Completed NSE at 10:26, 1.62s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 10:26
+Completed NSE at 10:26, 1.18s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 10:26
+Completed NSE at 10:26, 0.01s elapsed
+Nmap scan report for 45.76.177.238.vultrusercontent.com (45.76.177.238)
+Host is up, received conn-refused (0.052s latency).
+Scanned at 2023-10-07 10:24:06 +06 for 138s
+Not shown: 58991 filtered ports, 6540 closed ports
+Reason: 58991 no-responses and 6540 conn-refused
+PORT     STATE SERVICE REASON  VERSION
+22/tcp   open  ssh     syn-ack OpenSSH 8.9p1 Ubuntu 3ubuntu0.4 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  http    syn-ack Apache httpd 2.4.52 ((Ubuntu))
+| http-methods: 
+|_  Supported Methods: GET POST OPTIONS HEAD
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+1569/tcp open  ets?    syn-ack
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, GetRequest, HTTPOptions, Help, RTSPRequest, SSLSessionReq: 
+|     You want to be a Witcher? Then prove your worth.
+|     Tell me the Witcher Code.
+|     Sorry! You don't have what we're looking for. Come back again in few days.
+|   DNSVersionBindReqTCP, GenericLines, NULL, RPCCheck: 
+|     You want to be a Witcher? Then prove your worth.
+|_    Tell me the Witcher Code.
+9331/tcp open  unknown syn-ack
+| fingerprint-strings: 
+|   GenericLines, NULL: 
+|     ###################################################################################################
+|     ###################################################################################################
+|     ----- ---- ---- ---- --------- ---- ---- ---- ---- --------- ---- ---- ---- ----- ###
+|     ----- ---- ---- ---- --------- ---- ---- ---- ---- --------- ---- ---- ---- ----- ###
+|     |||l |||a |||g ||| |||H |||u |||n |||t ||| |||2 |||0 |||2 |||3 || ###
+|     ----- ---- ---- ---- --------- ---- ---- ---- ---- --------- ---- ---- ---- ----- ###
+|     ----- ---- ---- ---- --------- ---- ---- ---- ---- --------- ---- ---- ---- ----- ###
+|     Organized By - CTF Community Bangladesh ###
+|     ###################################################################################################
+|_    ######################################
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port1569-TCP:V=7.80%I=7%D=10/7%Time=6520DD9B%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,4B,"You\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x20prove\x20yo
+SF:ur\x20worth\.\nTell\x20me\x20the\x20Witcher\x20Code\.\n")%r(GenericLine
+SF:s,4B,"You\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x20prove\x20you
+SF:r\x20worth\.\nTell\x20me\x20the\x20Witcher\x20Code\.\n")%r(GetRequest,9
+SF:6,"You\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x20prove\x20your\x
+SF:20worth\.\nTell\x20me\x20the\x20Witcher\x20Code\.\nSorry!\x20You\x20don
+SF:'t\x20have\x20what\x20we're\x20looking\x20for\.\x20Come\x20back\x20agai
+SF:n\x20in\x20few\x20days\.\n")%r(HTTPOptions,96,"You\x20want\x20to\x20be\
+SF:x20a\x20Witcher\?\x20Then\x20prove\x20your\x20worth\.\nTell\x20me\x20th
+SF:e\x20Witcher\x20Code\.\nSorry!\x20You\x20don't\x20have\x20what\x20we're
+SF:\x20looking\x20for\.\x20Come\x20back\x20again\x20in\x20few\x20days\.\n"
+SF:)%r(RTSPRequest,96,"You\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x
+SF:20prove\x20your\x20worth\.\nTell\x20me\x20the\x20Witcher\x20Code\.\nSor
+SF:ry!\x20You\x20don't\x20have\x20what\x20we're\x20looking\x20for\.\x20Com
+SF:e\x20back\x20again\x20in\x20few\x20days\.\n")%r(RPCCheck,4B,"You\x20wan
+SF:t\x20to\x20be\x20a\x20Witcher\?\x20Then\x20prove\x20your\x20worth\.\nTe
+SF:ll\x20me\x20the\x20Witcher\x20Code\.\n")%r(DNSVersionBindReqTCP,4B,"You
+SF:\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x20prove\x20your\x20wort
+SF:h\.\nTell\x20me\x20the\x20Witcher\x20Code\.\n")%r(DNSStatusRequestTCP,9
+SF:6,"You\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x20prove\x20your\x
+SF:20worth\.\nTell\x20me\x20the\x20Witcher\x20Code\.\nSorry!\x20You\x20don
+SF:'t\x20have\x20what\x20we're\x20looking\x20for\.\x20Come\x20back\x20agai
+SF:n\x20in\x20few\x20days\.\n")%r(Help,96,"You\x20want\x20to\x20be\x20a\x2
+SF:0Witcher\?\x20Then\x20prove\x20your\x20worth\.\nTell\x20me\x20the\x20Wi
+SF:tcher\x20Code\.\nSorry!\x20You\x20don't\x20have\x20what\x20we're\x20loo
+SF:king\x20for\.\x20Come\x20back\x20again\x20in\x20few\x20days\.\n")%r(SSL
+SF:SessionReq,96,"You\x20want\x20to\x20be\x20a\x20Witcher\?\x20Then\x20pro
+SF:ve\x20your\x20worth\.\nTell\x20me\x20the\x20Witcher\x20Code\.\nSorry!\x
+SF:20You\x20don't\x20have\x20what\x20we're\x20looking\x20for\.\x20Come\x20
+SF:back\x20again\x20in\x20few\x20days\.\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9331-TCP:V=7.80%I=7%D=10/7%Time=6520DD9B%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,3D5,"\n#############################################################
+SF:######################################\n###############################
+SF:####################################################################\n#
+SF:##\t\t\t\t\t\t\t\t\t\t\t\t###\n###\t-----\x20----\x20----\x20----\x20--
+SF:-------\x20----\x20----\x20----\x20----\x20---------\x20----\x20----\x2
+SF:0----\x20-----\t###\n###\t-----\x20----\x20----\x20----\x20---------\x2
+SF:0----\x20----\x20----\x20----\x20---------\x20----\x20----\x20----\x20-
+SF:----\t###\n###\t\|\|F\x20\|\|\|l\x20\|\|\|a\x20\|\|\|g\x20\|\|\|\x20\x2
+SF:0\x20\x20\x20\x20\x20\|\|\|H\x20\|\|\|u\x20\|\|\|n\x20\|\|\|t\x20\|\|\|
+SF:\x20\x20\x20\x20\x20\x20\x20\|\|\|2\x20\|\|\|0\x20\|\|\|2\x20\|\|\|3\x2
+SF:0\|\|\t###\n###\t-----\x20----\x20----\x20----\x20---------\x20----\x20
+SF:----\x20----\x20----\x20---------\x20----\x20----\x20----\x20-----\t###
+SF:\n###\t-----\x20----\x20----\x20----\x20---------\x20----\x20----\x20--
+SF:--\x20----\x20---------\x20----\x20----\x20----\x20-----\t###\n###\t\t\
+SF:t\t\t\t\t\t\t\t\t\t###\n###\t\t\t\tOrganized\x20By\x20-\x20CTF\x20Commu
+SF:nity\x20Bangladesh\t\t\t\t###\n###\t\t\t\t\t\t\t\t\t\t\t\t###\n########
+SF:#######################################################################
+SF:####################\n######################################")%r(Generi
+SF:cLines,41B,"\n#########################################################
+SF:##########################################\n###########################
+SF:#######################################################################
+SF:#\n###\t\t\t\t\t\t\t\t\t\t\t\t###\n###\t-----\x20----\x20----\x20----\x
+SF:20---------\x20----\x20----\x20----\x20----\x20---------\x20----\x20---
+SF:-\x20----\x20-----\t###\n###\t-----\x20----\x20----\x20----\x20--------
+SF:-\x20----\x20----\x20----\x20----\x20---------\x20----\x20----\x20----\
+SF:x20-----\t###\n###\t\|\|F\x20\|\|\|l\x20\|\|\|a\x20\|\|\|g\x20\|\|\|\x2
+SF:0\x20\x20\x20\x20\x20\x20\|\|\|H\x20\|\|\|u\x20\|\|\|n\x20\|\|\|t\x20\|
+SF:\|\|\x20\x20\x20\x20\x20\x20\x20\|\|\|2\x20\|\|\|0\x20\|\|\|2\x20\|\|\|
+SF:3\x20\|\|\t###\n###\t-----\x20----\x20----\x20----\x20---------\x20----
+SF:\x20----\x20----\x20----\x20---------\x20----\x20----\x20----\x20-----\
+SF:t###\n###\t-----\x20----\x20----\x20----\x20---------\x20----\x20----\x
+SF:20----\x20----\x20---------\x20----\x20----\x20----\x20-----\t###\n###\
+SF:t\t\t\t\t\t\t\t\t\t\t\t###\n###\t\t\t\tOrganized\x20By\x20-\x20CTF\x20C
+SF:ommunity\x20Bangladesh\t\t\t\t###\n###\t\t\t\t\t\t\t\t\t\t\t\t###\n####
+SF:#######################################################################
+SF:########################\n######################################");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 10:26
+Completed NSE at 10:26, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 10:26
+Completed NSE at 10:26, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 10:26
+Completed NSE at 10:26, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 139.22 seconds
+
+
+
+

@@ -51,6 +51,8 @@
 - [hashes.com](https://hashes.com/en/decrypt/hash)
 - [crackstation.net](https://crackstation.net/)
 - [cyberchef](https://gchq.github.io/CyberChef/)
+- [sms-pdu-to-text](https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/)
+- [https://www.alpertron.com.ar/JAVAPROG.HTM](https://www.alpertron.com.ar/JAVAPROG.HTM)
 
 #### Defensive Security
 
@@ -282,6 +284,8 @@
     * mysql_schemadump
     * mysql_hashdump
   * multi/handler
+    * `use multi/handler`
+    * `exploit -j`
   * msfvenom
     * `msfvenom -p PAYLOAD OPTIONS`
     * Payload Name
@@ -306,11 +310,14 @@
 * [searchsploit](https://www.exploit-db.com/searchsploit)
 * [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 * [impacket](https://github.com/fortra/impacket)
+* Web Shells
+* 
 
 #### Priviledge Escalation
 
 * [PEASS-ng](https://github.com/carlospolop/PEASS-ng)
 * [GTFOBins](https://gtfobins.github.io/)
+* [DirtyCow](https://dirtycow.ninja/)
 * Linux
   * Commands
     * ``hostname``

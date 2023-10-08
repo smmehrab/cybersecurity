@@ -40,6 +40,8 @@ sudo apt install rlwrap
 sudo apt install ntpdate
 sudo apt install rsyslog
 sudo snap install ghidra
+sudo apt-get install p7zip-full
+sudo apt install binwalk
 
 # hydra
 sudo apt install libssh-dev

@@ -1,0 +1,4 @@
+Hey, so Geralt wants you to show him what you're made of. He needs you to go out to the wilds of Cintra and bring back the ARM of this crazy monster bot that's been terrorizing the place. Can you handle it?
+
+Author: `peace_ranger`
+nc <ip> <port>
