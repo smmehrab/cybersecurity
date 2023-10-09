@@ -44,6 +44,7 @@
   * [hashlib](https://docs.python.org/3/library/hashlib.html)
   * [Paramiko](https://www.paramiko.org/index.html)
     ``pip install paramiko``
+- [md5sum](https://en.wikipedia.org/wiki/Md5sum#:~:text=md5sum%20is%20a%20computer%20program,have%20any%20given%20MD5%20hash.)
 - 
 
 #### Online Tools
@@ -128,6 +129,7 @@
 - Subresource Integrity (SRI)
   - Generate Hash: [https://www.srihash.org/](https://www.srihash.org/)
   - ``<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>``
+- [bypass-403](https://github.com/iamj0ker/bypass-403)
 - 
 
 #### Network Services
