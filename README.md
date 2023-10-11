@@ -101,6 +101,29 @@
   ](https://en.wikipedia.org/wiki/Fast_flux)Compromised hosts acting as proxies. Attacker has control over DNS server. IP address for the same domain keep changing (using IP addressses of the compromised hosts).
 * [app.any.run](https://app.any.run/)
 * [Punnycode](https://en.wikipedia.org/wiki/Punycode)
+* DFIR
+  * Basics
+    * Artifacts
+      Pieces of evidence that point to an activity performed on a system
+    * Evidence Preservation
+      Maintain the integrity of the evidence we are collecting.
+    * Chain of Custody
+      When the evidence is collected, it must be made sure that it is kept in secure custody.
+    * Order of Volatility
+      Digital evidence is often volatile.
+    * Timeline Creation
+      A timeline of events needs to be created for efficient and accurate analysis.
+  * Tools
+    * [KAPE](https://www.kroll.com/en/insights/publications/cyber/kroll-artifact-parser-extractor-kape)
+    * [Autopsy](https://www.autopsy.com/)
+    * [Velaciraptor](https://docs.velociraptor.app/)
+  * Incident Response Process
+    * Preparation
+    * Identification
+    * Containment
+    * Eradication
+    * Recovery
+    * Lessons Learned
 * 
 
 #### Web Hacking
