@@ -43,6 +43,7 @@ sudo snap install ghidra
 sudo apt-get install p7zip-full
 sudo apt install binwalk
 sudo apt-get install freerdp2-x11
+sudo apt install vim
 
 # hydra
 sudo apt install libssh-dev
