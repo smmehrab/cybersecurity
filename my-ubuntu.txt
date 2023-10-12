@@ -45,6 +45,10 @@ sudo apt install binwalk
 sudo apt-get install freerdp2-x11
 sudo apt install vim
 
+# radare2
+git clone https://github.com/radareorg/radare2
+radare2/sys/install.sh
+
 # hydra
 sudo apt install libssh-dev
 git clone https://github.com/vanhauser-thc/thc-hydra.git
