@@ -61,6 +61,7 @@
 - [cyberchef](https://gchq.github.io/CyberChef/)
 - [sms-pdu-to-text](https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/)
 - [https://www.alpertron.com.ar/JAVAPROG.HTM](https://www.alpertron.com.ar/JAVAPROG.HTM)
+- [microcorruption.com](https://microcorruption.com/map)
 
 #### Binary Exploitation
 
@@ -69,6 +70,43 @@
 * Resources
   * [Liveoverflow](https://youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&feature=shared)
   * [Cryptocat](https://youtube.com/playlist?list=PLHUKi1UlEgOIc07Rfk2Jgb5fZbxDPec94&feature=shared)
+  * [crackmes](https://crackmes.one/)
+* Tools
+  * [gdb](https://en.wikipedia.org/wiki/GNU_Debugger)
+  * [hopper](https://www.hopperapp.com/)
+  * [ida](https://hex-rays.com/ida-free/)
+  * [radare2](https://rada.re/n/)
+  * [ghidra](https://ghidra-sre.org/)
+  * `file`
+  * `hexdump`
+    * `hexdump -C file_name`
+  * `strings`
+  * `objdump`
+    * `objdump -d file_name`
+    * `objdump +x file_name`
+      * `.text`
+      * `.rodata`
+  * `strace` (traces sys calls)
+  * `ltrace` (traces library functions)
+* GDB (GNU Debugger)
+  * `gdb executable_file`
+  * `disassemble main`
+  * `set disassembly-flavor intel`
+  * Add breakpoint
+    * `break *main`
+    * `break *0x0000000000400607`
+  * Run the program
+    * `run`
+    * `run arguments`
+  * Run until the next breakpoint
+    `continue`
+  * `info registers`
+  * `set $register_name=value`
+  * Step instruction `si`
+  * Next instruction `ni`
+  * List of info subcommands `i`
+  * `help`
+* 
 * 
 
 #### Defensive Security
@@ -124,7 +162,8 @@
     * Eradication
     * Recovery
     * Lessons Learned
-* 
+* Windows Forensics
+* Linux Forensics
 
 #### Web Hacking
 
