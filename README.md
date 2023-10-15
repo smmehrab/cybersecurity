@@ -113,7 +113,24 @@
   * Next instruction `ni`
   * List of info subcommands `i`
   * `help`
-* 
+* radare2
+  * `radare2 executable_file`
+  * Analyze all  `aaa`
+  * Stick to the main function `s sym.main`
+  * Print the disassembly `pdf`
+  * Add breakpoint `db address` (`db 0x00400649`)
+  * Reopen in debugger mode (with args) `ood arg1`
+  * Continue execution `dc`
+  * Show registers `dr`
+  * Set register value `dr register_name=address`
+  * Enter visual mode `vv`
+  * Code flow graph `VV`
+  * Press `p` to display the addresses
+  * Press `q` two times to exit the view
+  * `afvn` for any type of argument or variable
+  * Rename a variable `afvn new_name old_name`
+  * `V!` to swtich to a fancier mode
+  * In any visual mode, press `:` to type commands
 * 
 
 #### Defensive Security
