@@ -62,6 +62,13 @@
 - [sms-pdu-to-text](https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/)
 - [https://www.alpertron.com.ar/JAVAPROG.HTM](https://www.alpertron.com.ar/JAVAPROG.HTM)
 - [microcorruption.com](https://microcorruption.com/map)
+- [https://base64.guru/](https://base64.guru/)
+- [https://www.arin.net/](https://www.arin.net/)
+- [IP Info](https://ipinfo.io/)
+- [whois lookup](https://www.whois.com/whois/)
+- [Expand URL](https://www.expandurl.net/)
+- [URL Scan](https://urlscan.io/)
+- [Talos Reputation Center](https://talosintelligence.com/reputation_center)
 
 #### Binary Exploitation
 
@@ -137,7 +144,10 @@
   * [metadefender-opswat](https://metadefender.opswat.com/)
 * [Fast Flux
   ](https://en.wikipedia.org/wiki/Fast_flux)Compromised hosts acting as proxies. Attacker has control over DNS server. IP address for the same domain keep changing (using IP addressses of the compromised hosts).
-* [app.any.run](https://app.any.run/)
+* Malware Sandboxes
+  * [app.any.run](https://app.any.run/)
+  * [hybrid-analysis.com](https://www.hybrid-analysis.com/)
+  * [joesecurity.org](https://www.joesecurity.org/)
 * [Punnycode](https://en.wikipedia.org/wiki/Punycode)
 * DFIR
   * Basics
@@ -164,6 +174,56 @@
     * Lessons Learned
 * Windows Forensics
 * Linux Forensics
+* Email Analysis
+  * Internet Message Format (IMF)
+  * `Show Original` from more options in gmail.
+  * Email Headers
+    * `X-Originating-IP`
+    * `Reply-To` (or `Return-Path`)
+    * `Authentication-Results` (Smtp.mailfrom/header.from)
+    * `Content-Type`
+    * `Content-Disposition`
+    * `Content-Transfer-Encoding`
+    * `Content-Id`
+    * `X-Attachment-Id`
+  * Email Header Analysis
+    * [https://toolbox.googleapps.com/apps/messageheader/](https://toolbox.googleapps.com/apps/messageheader/)
+    * [https://mailheader.org/](https://mailheader.org/)
+    * [https://mha.azurewebsites.net/](https://mha.azurewebsites.net/)
+  * [https://www.arin.net/](https://www.arin.net/)
+    To which ISP (Internet Service Provider) or webhost the IP address belongs.
+  * [IP Info](https://ipinfo.io/)
+  * [whois lookup](https://www.whois.com/whois/)
+  * Hyperlinks or IP addresses should be "defanged".
+    For example, from `http://www.suspiciousdomain.com` to `hxxp[://]www[.]suspiciousdomain[.]com`
+    * [Defang URL - Cyberchef](https://gchq.github.io/CyberChef/#recipe=Defang_URL(true,true,true,'Valid%20domains%20and%20full%20URLs'))
+    * [Defang IP Address - Cyberchef](https://gchq.github.io/CyberChef/#recipe=Defang_IP_Addresses())
+  * [Expand URL](https://www.expandurl.net/)
+  * [URL Scan](https://urlscan.io/)
+  * [Talos Reputation Center](https://talosintelligence.com/reputation_center)
+  * [URL Extractor](https://www.convertcsv.com/url-extractor.htm)
+  * Tracking Pixel
+    An HTML code snippet which is loaded when a user visits a website or opens an email.
+    For example, a small pixel size image getting loaded when the email is opened. Allows the attacker to track the success of the phishing attack.
+  * Typosquatting
+  * Get hash value of the attachment
+  * [VirusTotal](https://www.virustotal.com/gui/home/upload)
+  * [PhishTool](https://www.phishtool.com/)
+  * Email Security
+    * SPF (Sender Policy Framework)
+      An SPF record is a DNS TXT record containing a list of the IP addresses that are allowed to send email on behalf of your domain.
+      * [SPF Record Lookup](https://mxtoolbox.com/spf.aspx)
+    * DKIM (DomainKeys Identified Mail))
+      A DKIM record exists in the DNS, but it is a bit more complicated than SPF. DKIM’s advantage is that it can survive forwarding, which makes it superior to SPF and a foundation for securing your email.
+    * DMARC
+      An open source standard, uses a concept called alignment to tie the result of two other open source standards, SPF & DKIM.
+      * [DMARC Record Lookup](https://mxtoolbox.com/dmarc.aspx)
+      * [Domain Health Checker](https://dmarcian.com/domain-checker/)
+  * [Phishing IR Playbook](https://www.incidentresponse.org/playbooks/phishing)
+  * S/MIME (Secure Multipurpose Internet Mail Extensions)
+    * Digital Signatures
+    * Encryption
+* 
 
 #### Web Hacking
 
@@ -318,6 +378,7 @@
   * [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)
   * [NetworkMiner](https://www.netresec.com/?page=NetworkMiner)
   * RSA Netwitness
+  * [apackets](https://apackets.com/) (Online)
 * MITM
 
   * [Ettercap](https://www.ettercap-project.org/)
@@ -648,7 +709,7 @@
     - [ClamAV](https://www.clamav.net/)
   - [AntiscanMe](https://antiscan.me/)
   - [Jotti](https://virusscan.jotti.org/)
-- 
+- [Malware Traffic Analysis](https://www.malware-traffic-analysis.net/)
 
 #### Hardware Tools
 
