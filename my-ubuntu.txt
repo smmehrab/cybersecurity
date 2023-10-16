@@ -44,6 +44,7 @@ sudo apt-get install p7zip-full
 sudo apt install binwalk
 sudo apt-get install freerdp2-x11
 sudo apt install vim
+pip3 install pwntools
 
 # radare2
 git clone https://github.com/radareorg/radare2
