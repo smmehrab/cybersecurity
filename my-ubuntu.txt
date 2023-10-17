@@ -45,6 +45,7 @@ sudo apt install binwalk
 sudo apt-get install freerdp2-x11
 sudo apt install vim
 pip3 install pwntools
+sudo apt install yara
 
 # radare2
 git clone https://github.com/radareorg/radare2
