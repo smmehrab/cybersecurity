@@ -326,6 +326,18 @@
   * [Engage](https://engage.mitre.org/)
   * [Defend](https://d3fend.mitre.org/)
   * [Engenuity](https://mitre-engenuity.org/)
+* [Yara](https://yara.readthedocs.io/en/stable/writingrules.html)
+  * `yara rule.yar file`
+  * [awesome-yara](https://github.com/InQuest/awesome-yara)
+  * Scanners
+    * [Loki](https://github.com/Neo23x0/Loki)
+      * Download from [here](https://github.com/Neo23x0/Loki/releases)
+    * [Thor Lite](https://www.nextron-systems.com/thor-lite/)
+    * [Fenrir](https://github.com/Neo23x0/Fenrir)
+    * [Yaya](https://github.com/EFForg/yaya)
+  * Generator
+    * [yarGen](https://github.com/Neo23x0/yarGen)
+  * [Valhala](https://valhalla.nextron-systems.com/)
 * 
 
 #### Web Hacking
