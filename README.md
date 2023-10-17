@@ -95,6 +95,7 @@
       * `.rodata`
   * `strace` (traces sys calls)
   * `ltrace` (traces library functions)
+  * [pwntools](https://github.com/Gallopsled/pwntools)
 * GDB (GNU Debugger)
   * `gdb executable_file`
   * `disassemble main`
@@ -153,6 +154,10 @@
   * Domain Names
   * IP Address
   * Hash Values
+* Models
+  * [Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
+  * [Unified Kill Chain](https://www.unifiedkillchain.com/)
+  * [The Diamond Model of Intrusion Analysis](https://cyware.com/security-guides/cyber-threat-intelligence/what-is-the-diamond-model-of-intrusion-analysis-5f02)
 * Blogs
   * [https://thedfirreport.com/](https://thedfirreport.com/)
   * [https://www.trellix.com/en-us/about/newsroom/stories/research.html](https://www.trellix.com/en-us/about/newsroom/stories/research.html)
@@ -165,7 +170,42 @@
   * [app.any.run](https://app.any.run/)
   * [hybrid-analysis.com](https://www.hybrid-analysis.com/)
   * [joesecurity.org](https://www.joesecurity.org/)
-* [Punnycode](https://en.wikipedia.org/wiki/Punycode)
+* [Punnycode
+  ](https://en.wikipedia.org/wiki/Punycode)
+* Log Analysis
+  * Log Configurations
+    * Security
+    * Operational
+    * Legal
+    * Debug
+  * Logging Principles
+    * Collection
+    * Format
+    * Archiving and Accessibility
+    * Monitoring and Alerting
+    * Security
+    * Continuous Change
+  * Logging Challenges
+    * Data Volume and Noise
+    * System Performance and Collection
+    * Process and Archive
+    * Security
+    * Analysis
+    * Misc
+  * Types of Logs
+    * Application Logs
+    * Audit Logs
+    * Security Logs
+    * Server Logs
+    * System Logs
+    * Network Logs
+    * Database Logs
+    * Web Server Logs
+  * Tools
+    * [rsyslog](https://www.rsyslog.com/)
+    * [logrotate](https://linux.die.net/man/8/logrotate)
+    * [splunk](https://www.splunk.com/)
+    * [elastic-search](https://www.elastic.co/elastic-stack)
 * DFIR
   * Basics
     * Artifacts
@@ -182,6 +222,7 @@
     * [KAPE](https://www.kroll.com/en/insights/publications/cyber/kroll-artifact-parser-extractor-kape)
     * [Autopsy](https://www.autopsy.com/)
     * [Velaciraptor](https://docs.velociraptor.app/)
+    * [FTK Imager](https://www.exterro.com/ftk-imager)
   * Incident Response Process
     * Preparation
     * Identification
@@ -190,6 +231,39 @@
     * Recovery
     * Lessons Learned
 * Windows Forensics
+  * Registry Editor `regedit.exe`
+  * Windows Registry
+    * Registry Keys
+    * Registry Values
+    * Registry Hive
+      A group of keys, subkeys, and values stored in a single file on the disk.
+  * Windows Registry Root Keys
+    * `HKEY_CURRENT_USER`
+    * `HKEY_USERS`
+    * `HKEY_LOCAL_MACHINE`
+    * `HKEY_CLASSES_ROOT`
+    * `HKEY_CURRENT_CONFIG`
+  * Registry Hives Offline
+    * `C:\Windows\System32\Config`
+      * DEFAULT (mounted on `HKEY_USERS\DEFAULT`)
+      * SAM (mounted on `HKEY_LOCAL_MACHINE\SAM`)
+      * SECURITY (mounted on `HKEY_LOCAL_MACHINE\Security`)
+      * SOFTWARE (mounted on `HKEY_LOCAL_MACHINE\Software`)
+      * SYSTEM (mounted on ` HKEY_LOCAL_MACHINE\System`)
+    * `C:\Users\<username>\`
+      * `NTUSER.DAT` (mounted on `HKEY_CURRENT_USER` when a user logs in)
+        Location: `C:\Users\<username>\`
+      * `USRCLASS.DAT` (mounted on `HKEY_CURRENT_USER\Software\CLASSES`)
+        Location: `C:\Users\<username>\AppData\Local\Microsoft\Windows`
+    * Amcache Hive
+      Saves information on programs that were recently run on the system.
+      Location: `C:\Windows\AppCompat\Programs\Amcache.hve`
+  * Registry Transaction
+    * Logs Windows often uses transaction logs when writing data to registry hives.
+    * Transaction log for each hive is stored as a `registry_hive_name.LOG` file in the same directory as the hive itself.
+  * Registry Backups
+    Hives are copied to `C:\Windows\System32\Config\RegBack` every 10 days.
+  * 
 * Linux Forensics
 * Email Analysis
   * Internet Message Format (IMF)
@@ -240,6 +314,18 @@
   * S/MIME (Secure Multipurpose Internet Mail Extensions)
     * Digital Signatures
     * Encryption
+* [Timestomping](https://nordvpn.com/cybersecurity/glossary/timestomping/#:~:text=Timestomping%20is%20a%20technique%20used,their%20actions%20or%20impede%20investigations.)
+* APT (Advanced Persistent Threat)
+* TTP (Tactics, Techniques, and Procedures)
+* [Nessus](https://www.tenable.com/downloads/nessus?loginAttempted=true) (Vulnerability Scanner)
+  * `sudo /bin/systemctl start nessusd.service`
+  * Visit `https://localhost:8834/`
+* [MITRE](https://attack.mitre.org/)
+  * [Attack Navigator](https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fgroups%2FG0008%2FG0008-enterprise-layer.json)
+  * [CAR](https://car.mitre.org/) (Cyber Analytics Repository)
+  * [Engage](https://engage.mitre.org/)
+  * [Defend](https://d3fend.mitre.org/)
+  * [Engenuity](https://mitre-engenuity.org/)
 * 
 
 #### Web Hacking
@@ -383,12 +469,6 @@
   * ``enum4linux -a MACHINE_IP``
 * [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)
 * [dsniff](https://www.kali.org/tools/dsniff/)
-* Logging
-
-  * [rsyslog](https://www.rsyslog.com/)
-  * [logrotate](https://linux.die.net/man/8/logrotate)
-  * [splunk](https://www.splunk.com/)
-  * [elastic-search](https://www.elastic.co/elastic-stack)
 * Traffic Analysis
 
   * [wireshark](https://www.wireshark.org/)
@@ -667,6 +747,9 @@
 
 #### OSINT
 
+- [OSINT Framework](https://osintframework.com/)
+- [hunter.io](https://hunter.io/)
+- [theHarvester](https://github.com/laramies/theHarvester)
 - Social
   - [sherlock](https://github.com/sherlock-project/sherlock)
   - [LinkedInt](- https://github.com/vysecurity/LinkedInt -)
@@ -727,6 +810,13 @@
   - [AntiscanMe](https://antiscan.me/)
   - [Jotti](https://virusscan.jotti.org/)
 - [Malware Traffic Analysis](https://www.malware-traffic-analysis.net/)
+- [MalwareBazaar](https://bazaar.abuse.ch/)
+- [MalShare](https://malshare.com/)
+- Fuzzy Hashing
+  (Similarity Preserving Hash Functions or SPHF)
+
+  - [SSDEEP](https://ssdeep-project.github.io/ssdeep/index.html)
+- 
 
 #### Hardware Tools
 
