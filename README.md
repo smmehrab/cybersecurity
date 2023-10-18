@@ -201,11 +201,42 @@
     * Network Logs
     * Database Logs
     * Web Server Logs
+  * Common Log File Locations
+    * Web Servers
+      * Nginx
+        * Access Logs: `/var/log/nginx/access.log`
+        * Error Logs: `/var/log/nginx/error.log`
+      * Apache
+        * Access Logs: `/var/log/apache2/access.log`
+        * Error Logs: `/var/log/apache2/error.log`
+    * Databases
+      * MySQL
+        * Error Logs: `/var/log/mysql/error.log`
+      * PostgreSQL
+        * Error and Activitiy Logs: `/var/log/postgresql/postgresql-{version}-main.log`
+    * Web Applications
+      * PHP
+        * Error Logs: `/var/log/php/error.log`
+    * Operating Systems
+      * Linux
+        * General System Logs: `/var/log/syslog`
+        * Authentication Logs: `/var/log/auth.log`
+    * Firewalls and IDS/IPS
+      * iptables:
+        * Firewall Logs: `/var/log/iptables.log`
+      * Snort:
+        * Snort Logs: `/var/log/snort/`
   * Tools
     * [rsyslog](https://www.rsyslog.com/)
     * [logrotate](https://linux.die.net/man/8/logrotate)
     * [splunk](https://www.splunk.com/)
     * [elastic-search](https://www.elastic.co/elastic-stack)
+    * [elastic-kibana](https://www.elastic.co/kibana)
+    * [elastic-logstash](https://www.elastic.co/logstash)
+    * [plaso](https://github.com/log2timeline/plaso)
+    * [threatfox](https://threatfox.abuse.ch/)
+    * [Sigma](https://github.com/SigmaHQ/sigma)
+    * [Yara](https://github.com/VirusTotal/yara)
 * DFIR
   * Basics
     * Artifacts
@@ -338,6 +369,7 @@
   * Generator
     * [yarGen](https://github.com/Neo23x0/yarGen)
   * [Valhala](https://valhalla.nextron-systems.com/)
+* [Zero Logon Vulnerability](https://www.secura.com/blog/zero-logon)
 * 
 
 #### Web Hacking
