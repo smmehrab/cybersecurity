@@ -69,6 +69,8 @@
 - [Expand URL](https://www.expandurl.net/)
 - [URL Scan](https://urlscan.io/)
 - [Talos Reputation Center](https://talosintelligence.com/reputation_center)
+- [Zero-Width Space Steganography](https://offdev.net/demos/zwsp-steg-js)
+- [jsteg - JPEG Steganography](https://github.com/lukechampine/jsteg)
 
 #### Binary Exploitation
 
