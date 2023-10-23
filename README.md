@@ -372,6 +372,8 @@
     * [yarGen](https://github.com/Neo23x0/yarGen)
   * [Valhala](https://valhalla.nextron-systems.com/)
 * [Zero Logon Vulnerability](https://www.secura.com/blog/zero-logon)
+* [OpenVAS](https://openvas.org/)
+  * `sudo docker run -d -p 443:443 --name openvas mikesplain/openvas`
 * 
 
 #### Web Hacking
@@ -832,6 +834,12 @@
 - [https://www.rapid7.com/db/](https://www.rapid7.com/db/)
 - [https://cve.mitre.org/](https://cve.mitre.org/)
 - [https://www.cvedetails.com/](https://www.cvedetails.com/)
+- [Zero Logon Vulnerability](https://www.secura.com/uploads/whitepapers/Zerologon.pdf) (Secura Whitepaper)
+  - [MS-NRPC: Remote Logon Protocol](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nrpc/ff8f970f-3e37-40f7-bd4b-af7336e4792f)
+  - [PoC](https://github.com/SecuraBV/CVE-2020-1472)
+- [OpenVAS](https://openvas.org/)
+  - `sudo docker run -d -p 443:443 --name openvas mikesplain/openvas`
+- 
 
 #### Malware Research
 
