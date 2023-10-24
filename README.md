@@ -382,7 +382,29 @@
     * Import & Export Features
     * Event Graph
     * API Support
-  * 
+  * N/A
+* [Cyber Threat Intelligence](https://en.wikipedia.org/wiki/Cyber_threat_intelligence) (CTI)
+  * Lifecycle
+    * Direction
+    * Collection
+    * Processing
+    * Analysis
+    * Dissemination
+    * Feedback
+  * Frameworks
+    * MITRE ATT&CK
+    * TAXII
+    * STIX
+    * Cyber Kill Chain
+    * The Diamond Model
+* [abuse.ch](Abuse.ch) (A community driven threat intelligence on cyber threats)
+  * [MalwareBazaar](https://bazaar.abuse.ch/)
+  * [Feodo Tracker](https://feodotracker.abuse.ch/)
+  * [SSL Blacklist](https://sslbl.abuse.ch/)
+  * [URL Haus](https://urlhaus.abuse.ch/)
+  * [Threat Fox](https://threatfox.abuse.ch/)
+* [Talos Intelligence](https://talosintelligence.com/)
+* [OpenCTI](https://filigran.io/solutions/products/opencti-threat-intelligence/)
 * 
 
 #### Web Hacking
@@ -881,6 +903,14 @@
   - [SSDEEP](https://ssdeep-project.github.io/ssdeep/index.html)
 - [MISP](https://www.misp-project.org/) (Malware Information Sharing Platform)
 - Remote Access Trojan (RAT)
+- [abuse.ch](Abuse.ch)
+
+  - [MalwareBazaar](https://bazaar.abuse.ch/)
+  - [Feodo Tracker](https://feodotracker.abuse.ch/)
+  - [SSL Blacklist](https://sslbl.abuse.ch/)
+  - [URL Haus](https://urlhaus.abuse.ch/)
+  - [Threat Fox](https://threatfox.abuse.ch/)
+- 
 
 #### Hardware Tools
 
