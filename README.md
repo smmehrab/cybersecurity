@@ -372,8 +372,17 @@
     * [yarGen](https://github.com/Neo23x0/yarGen)
   * [Valhala](https://valhalla.nextron-systems.com/)
 * [Zero Logon Vulnerability](https://www.secura.com/blog/zero-logon)
-* [OpenVAS](https://openvas.org/)
+* [OpenVAS](https://openvas.org/) (Open Vulnerability Assesment Scanning)
   * `sudo docker run -d -p 443:443 --name openvas mikesplain/openvas`
+* [MISP](https://www.misp-project.org/) (Malware Information Sharing Platform)
+  * Support
+    * IoC Database
+    * Automatic Correlation
+    * Data Sharing
+    * Import & Export Features
+    * Event Graph
+    * API Support
+  * 
 * 
 
 #### Web Hacking
@@ -870,7 +879,8 @@
   (Similarity Preserving Hash Functions or SPHF)
 
   - [SSDEEP](https://ssdeep-project.github.io/ssdeep/index.html)
-- 
+- [MISP](https://www.misp-project.org/) (Malware Information Sharing Platform)
+- Remote Access Trojan (RAT)
 
 #### Hardware Tools
 
