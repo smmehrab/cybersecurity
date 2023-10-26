@@ -47,6 +47,7 @@ sudo apt install vim
 pip3 install pwntools
 sudo apt install yara
 sudo apt install docker.io
+sudo apt install ncurses-hexedit
 
 # OpenVAS
 sudo docker run -d -p 443:443 --name openvas mikesplain/openvas
