@@ -485,6 +485,8 @@
     - File Extensions
     - Magic Numbers
       - [List of file signatures](https://en.wikipedia.org/wiki/List_of_file_signatures)
+- `while read line; do echo $line; done < flag.txt`
+- `grep . flag.txt` (period for anything)
 - 
 
 #### Network Services
