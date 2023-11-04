@@ -47,6 +47,7 @@ sudo apt install vim
 pip3 install pwntools
 sudo apt install yara
 sudo apt install docker.io
+sudo apt install docker-compose
 sudo apt install ncurses-hexedit
 sudo apt install nikto
 sudo apt install subversion
