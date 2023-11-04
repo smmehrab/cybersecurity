@@ -49,6 +49,7 @@ sudo apt install yara
 sudo apt install docker.io
 sudo apt install ncurses-hexedit
 sudo apt install nikto
+sudo apt install subversion
 
 sudo apt install nodejs
 sudo apt install npm
