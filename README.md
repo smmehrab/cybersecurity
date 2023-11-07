@@ -53,10 +53,11 @@
   - `sudo apt-get install freerdp2-x11`
   - `xfreerdp /dynamic-resolution +clipboard /cert:ignore /v:10.10.31.212 /u:Administrator /p:'TryH4ckM3!'`
 - [hexeditor](https://www.kali.org/tools/ncurses-hexedit/)
-- 
+- [certificate-ripper](https://github.com/Hakky54/certificate-ripper)
 
 #### Online Tools
 
+- [https://nostarch.com/catalog/security](https://nostarch.com/catalog/security)
 - [hashes.com](https://hashes.com/en/decrypt/hash)
 - [crackstation.net](https://crackstation.net/)
 - [cyberchef](https://gchq.github.io/CyberChef/)
@@ -70,11 +71,16 @@
 - [Expand URL](https://www.expandurl.net/)
 - [URL Scan](https://urlscan.io/)
 - [Talos Reputation Center](https://talosintelligence.com/reputation_center)
+- Track Cyptocurrency Transaction from Wallet Address
+  - [https://live.blockcypher.com/](https://live.blockcypher.com/)
+  - [https://www.blockchain.com/explorer](https://www.blockchain.com/explorer)
 - 
 
 #### CTF Tools
 
+* [ctfnote](https://www.ctfnote.com/)
 * [ctf-playbook](https://fareedfauzi.gitbook.io/ctf-playbook/)
+* [ctf-docs](https://docs.xanhacks.xyz/)
 
 - Steganography
   - [Zero-Width Space Steganography](https://offdev.net/demos/zwsp-steg-js)
@@ -420,6 +426,12 @@
   * [Threat Fox](https://threatfox.abuse.ch/)
 * [Talos Intelligence](https://talosintelligence.com/)
 * [OpenCTI](https://filigran.io/solutions/products/opencti-threat-intelligence/)
+* Memory Forensics
+  * [Volatility](https://github.com/volatilityfoundation/volatility3)
+    * `volatility -f Win7-Jigsaw.raw imageinfo`
+    * `volatility -f Win7-Jigsaw.raw --profile=Win7SP1x64 pslist`
+    * `volatility -f Win7-Jigsaw.raw --profile=Win7SP1x64 dlllist -p 3704`
+  * 
 * 
 
 #### Web Hacking
@@ -961,6 +973,40 @@
   - [SSL Blacklist](https://sslbl.abuse.ch/)
   - [URL Haus](https://urlhaus.abuse.ch/)
   - [Threat Fox](https://threatfox.abuse.ch/)
+- Identify the compile/packer of a file
+
+  - [PeID](https://softfamous.com/peid/)
+- Just because a file doesn't have the `.exe` extension, doesn't mean it isn't an actual executable! It can have the `.jpg` extension and still be an executable piece of code. Depends on `file signatures`.
+- If a file isn't obfuscated/packed, it should have a larger import count and more complex codeflow graph, viewed on disassmbler.
+- [PE Explorer](http://www.pe-explorer.com/)
+- [IDA Free](https://hex-rays.com/ida-free/)
+- [REMnux](https://remnux.org/)
+
+  - `vmonkey`
+    ViperMonkey is a parser engine that is capable of analysing visual basic macros without executing (opening the document).
+- Malicious PDFs
+
+  - Can include
+
+    - Javascript
+    - Python
+    - Executables
+    - Powershell Shellcode
+  - [peepdf](https://pypi.org/project/peepdf/0.3.2/)
+
+    - `peepdf demo_notsuspicious.pdf`
+    - `echo 'extract js > javascript-from-demo_notsuspicious.pdf' > extracted_javascript.txt`
+    - `peepdf -s extracted_javascript.txt demo_notsuspicious.pdf`
+- [readelf](https://man7.org/linux/man-pages/man1/readelf.1.html)
+
+  - `readelf -l file_name`
+- File Entropy
+
+  - A rating that scores (0-8.0) how random the data within a PE file is.
+  - Encrypted/packed file will have high entropy score.
+  - Packers change the entry point from the original location to what's called the "Unpacking Stub". Once the program is fully unpacked, the entry point will now relocate back to its normal place to begin executing code.
+  - Packed files will have very few "Imports". (May only have "GetProcAddress" and "LoadLibrary")
+  - They may have sections named after certain packers such as UPX.
 - 
 
 #### Hardware Tools
@@ -976,3 +1022,12 @@
 - [SecLists](https://github.com/danielmiessler/SecLists)
   - [directory-list-1.0.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/directory-list-1.0.txt)
 - [jwt-secrets](https://github.com/wallarm/jwt-secrets)
+
+#### Cryptography
+
+* [Chinese Remainder Theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem)
+* [Hastad Broadcast Attack](https://en.wikipedia.org/wiki/Coppersmith%27s_attack#H%C3%A5stad's_broadcast_attack)
+  * [https://crypto.stackexchange.com/a/52519/106329](https://crypto.stackexchange.com/a/52519/106329)
+  * [https://asecuritysite.com/ctf/rsa_ctf02](https://asecuritysite.com/ctf/rsa_ctf02)
+  * [https://docs.xanhacks.xyz/crypto/rsa/08-hastad-broadcast-attack/](https://docs.xanhacks.xyz/crypto/rsa/08-hastad-broadcast-attack/)
+*
