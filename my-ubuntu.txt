@@ -128,6 +128,14 @@ sudo snap install spotify
 sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
 sudo chmod a+rx /usr/local/bin/yt-dlp
 
+# Volatility
+git clone https://github.com/volatilityfoundation/volatility3.git
+cd volatility3/
+pip3 install -r requirements.txt
+python3 setup.py build 
+python3 setup.py install
+python3 vol.py -h
+
 pip install pipenv
 export PATH="/home/smmehrab/.local/bin:$PATH"
 
